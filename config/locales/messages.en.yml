@@ -1,0 +1,6 @@
+en:
+  messages:
+    listing: Listing %{model}
+    editing: Editing %{model}
+    new: New %{model}
+    confirm_with: Do you really want to remove [%{item}] ?

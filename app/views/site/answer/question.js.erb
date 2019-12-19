@@ -1,0 +1,31 @@
+var button_answer = document.getElementById('submit_<%= @answer.question_id %>');
+
+button_answer.classList.remove('btn-default');
+button_answer.classList.remove('btn-success');
+button_answer.classList.remove('btn-danger');
+
+if(<%= @answer.correct %>){
+    button_answer.classList.add('btn-success');
+    $.bootstrapGrowl("Parabens !!! Voce Acertou.", {
+        ele: 'body', // which element to append to
+        type: 'success', // (null, 'info', 'danger', 'success')
+        offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+        align: 'center', // ('left', 'right', or 'center')
+        width: 'auto', // (integer, or 'auto')
+        delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+        allow_dismiss: false, // If true then will display a cross to close the popup.
+        stackup_spacing: 10 // spacing between consecutively stacked growls.
+    });
+} else {
+    button_answer.classList.add('btn-danger');
+    $.bootstrapGrowl("Idiota !!! Voce Errou.", {
+        ele: 'body', // which element to append to
+        type: 'danger', // (null, 'info', 'danger', 'success')
+        offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+        align: 'center', // ('left', 'right', or 'center')
+        width: 'auto', // (integer, or 'auto')
+        delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+        allow_dismiss: false, // If true then will display a cross to close the popup.
+        stackup_spacing: 10 // spacing between consecutively stacked growls.
+    });
+}
